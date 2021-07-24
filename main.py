@@ -10,10 +10,10 @@ from tkinter import font
 
 window = tkinter.Tk()
 
-window.title('On Screen Num-Pad')
+window.title('OnScreen Keyboard')
 unit = 76
 winHeight = unit*7
-winWidth = unit*21
+winWidth = unit*22
 window.geometry(f'{winHeight}x{winWidth}')
 window.maxsize(width=winWidth, height=winHeight)
 window.minsize(width=winWidth, height=winHeight)
