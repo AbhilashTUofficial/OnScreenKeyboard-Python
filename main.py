@@ -1,4 +1,5 @@
 # * Window Setup
+from alphanumericKeys import createAlphanumericPad
 from threading import Thread, ThreadError
 from navigationKeys import createNavigationPad
 from numericKeys import createNumericPad
@@ -12,7 +13,7 @@ window = tkinter.Tk()
 window.title('On Screen Num-Pad')
 unit = 76
 winHeight = unit*7
-winWidth = unit*23
+winWidth = unit*21
 window.geometry(f'{winHeight}x{winWidth}')
 window.maxsize(width=winWidth, height=winHeight)
 window.minsize(width=winWidth, height=winHeight)
@@ -34,18 +35,22 @@ display.grid(rowspan=1, columnspan=99, ipadx=900, ipady=34)
 
 
 # * Num Pad
-numPad = tkinter.LabelFrame(window, padx=10, pady=10)
+numPad = tkinter.LabelFrame(window, padx=0, pady=0,background='gray27',border=0)
 numPad.grid(row=1, column=3, pady=10, padx=10)
 
 # * Nav Pad
-navPad = tkinter.LabelFrame(window, padx=10, pady=10)
+navPad = tkinter.LabelFrame(window, padx=0, pady=0,background='gray27',border=0)
 navPad.grid(row=1, column=2, pady=10, padx=10)
 
+# * Alpha Pad
+alphaPad = tkinter.LabelFrame(window, padx=0, pady=0,background='gray27',border=0)
+alphaPad.grid(row=1, column=1, pady=10, padx=10)
 
-def onScreenKeyboard(numPad,navPad):
+def onScreenKeyboard(numPad,navPad,alphaPad):
 
     Thread(target=createNumericPad(numPad)).start()
     Thread(target=createNavigationPad(navPad)).start()
+    Thread(target=createAlphanumericPad(alphaPad)).start()
     window.mainloop()
 
-onScreenKeyboard(numPad,navPad)
+onScreenKeyboard(numPad,navPad,alphaPad)

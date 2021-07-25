@@ -7,8 +7,8 @@ buttonFont = ("Arial", 8, "bold")
 
 def createNavigationPad(panel):
 
-    px=10
-    py=20
+    px=12
+    py=22
 
     # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -59,7 +59,7 @@ def createNavigationPad(panel):
     pageDownBtn.grid(row=1, column=2,  ipadx=px, ipady=py)
     # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    tkinter.Label(panel,text="",width=0,height=4).grid(row=2,columnspan=3,column=1)
+    tkinter.Label(panel,text="",width=0,height=4,background='gray27',border=0).grid(row=2,columnspan=3,column=1)
 
     # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
