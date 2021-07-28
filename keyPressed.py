@@ -1,5 +1,5 @@
 # ! Key Pressed function
 
 
-def keyPressed():
+def keyPressed(key):
     pass

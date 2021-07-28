@@ -2,7 +2,7 @@ from keyPressed import keyPressed
 import tkinter
 
 
-buttonFont = ("Arial", 20, "bold")
+buttonFont = ("Arial", 16, "bold")
 
 
 def createNumericPad(panel):
@@ -58,7 +58,7 @@ def createNumericPad(panel):
     addBtn.configure(background='gray21', highlightbackground='gray27',
                      foreground="white", highlightcolor="gray27")
     addBtn.grid(row=3, column=3, rowspan=2, ipadx=0,
-                ipady=50)
+                ipady=48)
 
     # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -105,7 +105,7 @@ def createNumericPad(panel):
     enterBtn.configure(background='gray21', highlightbackground='gray27',
                        foreground="white", highlightcolor="gray27")
     enterBtn.grid(row=5, column=3, rowspan=2, ipadx=0,
-                  ipady=50)
+                  ipady=48)
 
     # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -114,7 +114,7 @@ def createNumericPad(panel):
     num0.configure(background='gray21', highlightbackground='gray27',
                    foreground="white", highlightcolor="gray27")
     num0.grid(row=6, column=0, columnspan=2,
-              ipadx=36, ipady=14)
+              ipadx=34, ipady=14)
 
     pointBtn = tkinter.Button(panel, text='.', width=3,
                               command=lambda: keyPressed('.'), font=buttonFont)
@@ -124,4 +124,3 @@ def createNumericPad(panel):
 
     # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    panel.mainloop()

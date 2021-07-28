@@ -1,6 +1,7 @@
 # * Window Setup
-
-from onScreenKeyboard import onScreenKeyboard
+from threading import Thread, ThreadError
+from navigationKeys import createNavigationPad
+from numericKeys import createNumericPad
 import tkinter
 from tkinter import ttk
 from tkinter import font
@@ -39,5 +40,12 @@ numPad.grid(row=1, column=3, pady=10, padx=10)
 # * Nav Pad
 navPad = tkinter.LabelFrame(window, padx=10, pady=10)
 navPad.grid(row=1, column=2, pady=10, padx=10)
+
+
+def onScreenKeyboard(numPad,navPad):
+
+    Thread(target=createNumericPad(numPad)).start()
+    Thread(target=createNavigationPad(navPad)).start()
+    window.mainloop()
 
 onScreenKeyboard(numPad,navPad)
