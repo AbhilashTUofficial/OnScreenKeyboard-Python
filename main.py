@@ -49,7 +49,7 @@ alphaPad.grid(row=1, column=1, pady=10, padx=10)
 
 # * Func Pad
 funcPad = tkinter.LabelFrame(window, padx=0, pady=0,background='gray27',border=0)
-funcPad.grid(row=0, column=0,columnspan=3, pady=10, padx=10)
+funcPad.grid(row=0, column=0,columnspan=6, pady=10, padx=10,sticky="W")
 
 def onScreenKeyboard(numPad,navPad,alphaPad):
 
