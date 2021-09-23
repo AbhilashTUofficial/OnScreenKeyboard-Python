@@ -1,4 +1,5 @@
 # * Window Setup
+from functionKeys import createFunctionPad
 from alphanumericKeys import createAlphanumericPad
 from threading import Thread, ThreadError
 from navigationKeys import createNavigationPad
@@ -26,12 +27,12 @@ style.configure('TButton', background='gray21')
 style.configure('TButton', foreground='white')
 _displayFont = ("Arial", 16, "bold")
 
-# * Display Setup
+# # * Display Setup
 
-input = tkinter.StringVar(window, "")
-display = tkinter.Entry(window, state='readonly',
-                        textvariable=input, font=_displayFont)
-display.grid(rowspan=1, columnspan=99, ipadx=900, ipady=34)
+# input = tkinter.StringVar(window, "")
+# display = tkinter.Entry(window, state='readonly',
+#                         textvariable=input, font=_displayFont)
+# display.grid(rowspan=1, columnspan=99, ipadx=900, ipady=34)
 
 
 # * Num Pad
@@ -46,11 +47,16 @@ navPad.grid(row=1, column=2, pady=10, padx=10)
 alphaPad = tkinter.LabelFrame(window, padx=0, pady=0,background='gray27',border=0)
 alphaPad.grid(row=1, column=1, pady=10, padx=10)
 
+# * Func Pad
+funcPad = tkinter.LabelFrame(window, padx=0, pady=0,background='gray27',border=0)
+funcPad.grid(row=0, column=0,columnspan=3, pady=10, padx=10)
+
 def onScreenKeyboard(numPad,navPad,alphaPad):
 
     Thread(target=createNumericPad(numPad)).start()
     Thread(target=createNavigationPad(navPad)).start()
     Thread(target=createAlphanumericPad(alphaPad)).start()
+    Thread(target=createFunctionPad(funcPad)).start()
     window.mainloop()
 
 onScreenKeyboard(numPad,navPad,alphaPad)
