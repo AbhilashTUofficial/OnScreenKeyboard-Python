@@ -1,16 +1,9 @@
+from createButton import createButton
 import tkinter
-from keyPressed import keyPressed
-
-
-buttonFont = ("Arial", 16, "bold")
-
 
 def createFunctionPad(panel):
 
-
     # * Create layers
-
-
 
     section1=tkinter.LabelFrame(panel, padx=0, pady=0,background='gray27',border=0)
     section1.grid(row=0, column=0, pady=10, padx=10,sticky="W")
@@ -26,114 +19,21 @@ def createFunctionPad(panel):
 
     section5=tkinter.LabelFrame(panel, padx=0, pady=0,background='gray27',border=0)
     section5.grid(row=0, column=4, pady=10, padx=10,sticky="W")
-
-    px=4#4
-    py=4#16
-
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!! Section 1 !!!!!!!!!!!!!!!!!!!!!!!!!!!
     
-    btnEsc = tkinter.Button(section1, text='Esc',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnEsc.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnEsc.grid(row=0, column=1, ipadx=px, ipady=py+12,padx=36)
-
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!! Section 2 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    btnF1 = tkinter.Button(section2, text='F1',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF1.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF1.grid(row=0, column=0, ipadx=px, ipady=py+12)
-
-    btnF2 = tkinter.Button(section2, text='F2',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF2.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF2.grid(row=0, column=1, ipadx=px, ipady=py+12)
-
-    btnF3 = tkinter.Button(section2, text='F3',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF3.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF3.grid(row=0, column=2, ipadx=px, ipady=py+12)
-
-    btnF4 = tkinter.Button(section2, text='F4',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF4.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF4.grid(row=0, column=3, ipadx=px, ipady=py+12)
-
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!! Section 3 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    btnF5 = tkinter.Button(section3, text='F5',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF5.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF5.grid(row=0, column=0, ipadx=px, ipady=py+12)
-
-    btnF6 = tkinter.Button(section3, text='F6',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF6.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF6.grid(row=0, column=1, ipadx=px, ipady=py+12)
-
-    btnF7 = tkinter.Button(section3, text='F7',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF7.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF7.grid(row=0, column=2, ipadx=px, ipady=py+12)
-
-    btnF8 = tkinter.Button(section3, text='F8',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF8.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF8.grid(row=0, column=3, ipadx=px, ipady=py+12)
-
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!! Section 4 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    btnF9 = tkinter.Button(section4, text='F9',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF9.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF9.grid(row=0, column=0, ipadx=px, ipady=py+12)
-
-    btnF10 = tkinter.Button(section4, text='F10',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF10.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF10.grid(row=0, column=1, ipadx=px, ipady=py+12)
-
-    btnF11 = tkinter.Button(section4, text='F11',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF11.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF11.grid(row=0, column=2, ipadx=px, ipady=py+12)
-
-    btnF12 = tkinter.Button(section4, text='F12',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=buttonFont)
-    btnF12.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnF12.grid(row=0, column=3, ipadx=px, ipady=py+12)
-
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!! Section 5 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    btnPS = tkinter.Button(section5, text='Print\nScreen',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=("Arial", 10, "bold"))
-    btnPS.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnPS.grid(row=0, column=0,  ipadx=px+8, ipady=py+8)
-
-    btnSL = tkinter.Button(section5, text='Scroll\nLock',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=("Arial", 10, "bold"))
-    btnSL.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnSL.grid(row=0, column=1,  ipadx=px+8, ipady=py+8)
-
-    btnPB = tkinter.Button(section5, text='Pause\nBreak',anchor="nw", width=3,
-                             command=lambda: keyPressed('nl'), font=("Arial", 10, "bold"))
-    btnPB.configure(background='gray21', highlightbackground='gray27',
-                      foreground="white", highlightcolor="gray27")
-    btnPB.grid(row=0, column=2,  ipadx=px+8, ipady=py+8)
-
-    # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    createButton(section1,0,0,3,"Esc\n","esc")
+    createButton(section1,0,1,0,"","")
+    createButton(section2,0,0,3,"F1\n","f1")
+    createButton(section2,0,1,3,"F2\n","f2")
+    createButton(section2,0,2,3,"F3\n","f3")
+    createButton(section2,0,3,3,"F4\n","f4")
+    createButton(section3,0,0,3,"F5\n","f5")
+    createButton(section3,0,1,3,"F6\n","f6")
+    createButton(section3,0,2,3,"F7\n","f7")
+    createButton(section3,0,3,3,"F8\n","f8")
+    createButton(section4,0,0,3,"F9\n","f9")
+    createButton(section4,0,1,3,"F10\n","f10")
+    createButton(section4,0,2,3,"F11\n","f11")
+    createButton(section4,0,3,3,"F12\n","f12")
+    createButton(section5,0,0,3,"Print\nScreen","prtsrc")
+    createButton(section5,0,1,3,"Scroll\nLock","srllock")
+    createButton(section5,0,2,3,"Pause\nBreak","pb")
