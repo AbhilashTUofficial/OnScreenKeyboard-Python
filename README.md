@@ -16,12 +16,7 @@ A gui version of on-screen keyboard using python tkinter.
     |   |-- main.py
     |   |-- onScreenNumPad.py
     |
-    |-- alphanumericKeys.py
-    |-- functionKeys.py
-    |-- keyPressed.py
     |-- main.py
-    |-- navigationKeys.py
-    |-- numericKeys.py
     |
     |-- Img
     |   |-- pycharm.png

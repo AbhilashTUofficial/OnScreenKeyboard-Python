@@ -1,11 +1,11 @@
 # * Window Setup
-from createButton import createButton
-from threading import Thread, ThreadError
-
+# from pyautogui import press, typewrite, hotkey
+# press('a')
+#         # typewrite('quick brown fox')
+#         # hotkey('ctrl', 'w')
+from threading import Thread
 import tkinter
 from tkinter import ttk
-from tkinter import font
-
 
 window = tkinter.Tk()
 
@@ -55,13 +55,23 @@ funcPad = tkinter.LabelFrame(
 funcPad.grid(row=1, column=0, columnspan=6, pady=10, padx=10, sticky="W")
 
 
+global caplock
+caplock=False
+
+def keyPressed(key):
+    if(key=='capslock'):
+        input.set(input.get()+str(key).upper())  
+    else:
+        input.set(input.get()+key)
 
 
-
-
-
-
-
+def createButton(panel, r, c, context, key, font, pad, size, span):
+    btn = tkinter.Button(panel, text=context, anchor="nw", width=size[0], height=size[1],
+                         command=lambda: keyPressed(key), font=font)
+    btn.configure(background='gray21', highlightbackground='gray27',
+                  foreground="white", highlightcolor="gray27")
+    btn.grid(row=r, column=c,
+             ipadx=pad[0], ipady=pad[1], rowspan=span[0], columnspan=span[1])
 
 
 def createAlphanumericPad(panel):
@@ -146,7 +156,7 @@ def createAlphanumericPad(panel):
     createButton(layerTwo, 0, 13, "|\n\\", "|\\",
                  ("Arial", 12, "bold"), [8, 10], [6, 0], [1, 1])
 
-    createButton(layerThree, 0, 0, "Caps\nLock", "caplock",
+    createButton(layerThree, 0, 0, "Caps\nLock", "capslock",
                  ("Arial", 12, "bold"), [8, 9], [9, 0], [1, 1])
     createButton(layerThree, 0, 1, "A", "a",
                  ("Arial", 16, "bold"), [4, 16], [3, 0], [1, 1])
@@ -340,7 +350,6 @@ def createFunctionPad(panel):
                  ("Arial", 10, "bold"), [4, 12], [5, 0], [1, 1])
     createButton(section5, 0, 2, "Pause\nBreak", "pb",
                  ("Arial", 10, "bold"), [4, 12], [5, 0], [1, 1])
-
 
 
 def onScreenKeyboard(numPad, navPad, alphaPad):
