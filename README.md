@@ -11,6 +11,9 @@ A gui version of on-screen keyboard using python tkinter.
 ![GitHub last commit](https://img.shields.io/github/last-commit/AbhilashTUofficial/OnScreenKeyboard-Python?color=blue&label=Last%20Commit%3A&style=for-the-badge)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/AbhilashTUofficial/OnScreenKeyboard-Python?color=blue&label=Repo%20Size%3A&style=for-the-badge)
 
+<img alt="keyboard-layout" width="800px" src="./Img/screenshot.png">
+<br/>
+
 ### Directory Structure :
     |-- folder
     |   |-- main.py
@@ -45,7 +48,7 @@ A gui version of on-screen keyboard using python tkinter.
 
 The following illustration shows how these keys are arranged on a typical keyboard. Your keyboard layout might be different.
 
-<img alt="keyboard-layout" width="600px" src="./Img/keyboard.jpg">
+<img alt="keyboard-layout" width="800px" src="./Img/keyboard.jpg">
 <br/><br/>
 
 

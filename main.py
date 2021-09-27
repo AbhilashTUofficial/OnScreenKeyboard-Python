@@ -3,9 +3,11 @@
 # press('a')
 #         # typewrite('quick brown fox')
 #         # hotkey('ctrl', 'w')
+
+from pyautogui import press
 from threading import Thread
 import tkinter
-from tkinter import ttk
+from tkinter import Label, ttk
 
 window = tkinter.Tk()
 
@@ -24,7 +26,7 @@ style = ttk.Style()
 window.configure(bg='gray27')
 style.configure('TButton', background='gray21')
 style.configure('TButton', foreground='white')
-_displayFont = ("Arial", 16, "bold")
+_displayFont = ("Arial", 18, "bold")
 
 # * Display Setup
 
@@ -55,15 +57,27 @@ funcPad = tkinter.LabelFrame(
 funcPad.grid(row=1, column=0, columnspan=6, pady=10, padx=10, sticky="W")
 
 
-global caplock
-caplock=False
-
+capsLock=False
 def keyPressed(key):
-    if(key=='capslock'):
-        input.set(input.get()+str(key).upper())  
-    else:
-        input.set(input.get()+key)
+    global capsLock
 
+    if(key=='capslock'):
+        press('capslock')
+        if(capsLock):
+            capsLock=False
+        else:
+            capsLock=True
+    if(key=='capslock'):
+        pass
+    elif(key=='space'):
+        input.set(str(input.get())+" ")
+    else:
+        if(capsLock):
+            input.set(str(input.get())+str(key).upper())
+        else:
+            input.set(str(input.get())+key)
+    
+    
 
 def createButton(panel, r, c, context, key, font, pad, size, span):
     btn = tkinter.Button(panel, text=context, anchor="nw", width=size[0], height=size[1],
@@ -316,9 +330,10 @@ def createFunctionPad(panel):
         panel, padx=0, pady=0, background='gray27', border=0)
     section5.grid(row=0, column=4, pady=10, padx=10, sticky="W")
 
+
     createButton(section1, 0, 0, "Esc\n", "esc",
                  ("Arial", 10, "bold"), [4, 12], [5, 0], [1, 1])
-    tkinter.Label(section1, text="", width=8, height=4, background='gray27',
+    tkinter.Label(section1, text="", width=9, height=4, background='gray27',
                   border=0, padx=6).grid(row=0, columnspan=3, column=1)
     createButton(section2, 0, 0, "F1\n", "f1",
                  ("Arial", 10, "bold"), [4, 12], [5, 0], [1, 1])
@@ -350,6 +365,8 @@ def createFunctionPad(panel):
                  ("Arial", 10, "bold"), [4, 12], [5, 0], [1, 1])
     createButton(section5, 0, 2, "Pause\nBreak", "pb",
                  ("Arial", 10, "bold"), [4, 12], [5, 0], [1, 1])
+
+    
 
 
 def onScreenKeyboard(numPad, navPad, alphaPad):
